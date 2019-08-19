@@ -1,0 +1,66 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <div class="header">
+        <h1 class="display-4">Chefs | <a href="dishes">Dishes</a></h1>
+    </div>
+    <div class="header_r">
+        <h4><a href="add">Add a Chef</a></h4>
+    </div> 
+    <br>
+    <br>
+        <h3>Check out our roster of Chefs!</h3>
+
+    <div class="content">
+        <table class="chefs_table">
+            <tr>
+                <th>Name</th>
+                <th>Date of Birth</th>
+                <th># of Dishes</th>
+            </tr>
+        @{
+            foreach(var chef in @Model) {
+            <tr>
+                <td>@chef.FirstName @chef.LastName</td>
+                <td>@chef.DateofBirth</td>
+                <td>Chefs Dishes</td>
+            </tr>
+            }
+        }
+        </table>
+    </div>
+    
+</div>
+
+<style>
+.chefs_table{
+    margin-top: 50px;
+    margin-left: 80px;
+    align-content: center;
+}
+.chefs_table td{
+    width: 300px;
+}
+.header_r{
+    vertical-align: center;
+    display: inline-block;
+    margin-left: 100px;
+
+}
+.header{
+    text-align: center;
+    display: inline-block;
+    outline: 2px solid black;
+    height: 70px;
+    width: 350px;
+    margin-left: 220px;
+}
+h1{
+    display: inline-block
+}
+h4{
+    display: inline-block
+}
+</style>

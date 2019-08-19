@@ -1,0 +1,80 @@
+<br>
+<br>
+<h2>Add a Dish!</h2>
+<br>
+<div class="left">
+        @model Dish
+        <form asp-controller="Home" asp-action="new" method="post">
+        <span class="error" asp-validation-for="DishName"></span><br>
+        <input class="place_input" placeholder="Name of Dish" asp-for="DishName"><br>
+        <span class="error" asp-validation-for="Calories"></span><br>        
+        <input class="place_input" placeholder="Calories" asp-for="Calories"><br>
+        <span class="error" asp-validation-for="Description"></span><br>
+        <input class="place_input" placeholder="Description" asp-for="Description"><br>
+    </div>
+    <div class="middle">
+        </select><br>
+        <p>Chef:</p>
+        <select asp-for="UserId">
+            @{
+                foreach (var chef in @ViewBag.cooks) {
+                    <option value=@chef.UserId>@chef.FirstName @chef.LastName</option> 
+                }
+            }
+        </select><br>
+    </div>
+    <div class ="right">
+        <span class="error" asp-validation-for="Tastiness"></span><br>
+        <p>Tastiness</p>
+        <select placeholder="Tastiness" asp-for="Tastiness">
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+        </select>
+        <button type="submit">Add Dish</button>
+        </form>
+    </div>
+        <br>
+        <br>
+       
+
+
+
+
+
+
+<style>
+.place_input{
+    text-align: center;
+}
+#descrip{
+    width: 400px;
+    height: 200px;
+}
+h2{
+    text-align: center;
+}
+.left{
+    width: 200px;
+    height: 300 px;
+    display: inline-block;
+    margin-left: 30px;
+}
+.middle{
+    width: 200px;
+    height: 300 px;
+    display: inline-block;
+    vertical-align: top;
+}
+.right{
+    width: 200px;
+    height: 300 px;
+    display: inline-block;
+    vertical-align: top;
+}
+.bottom{
+    margin-left: 30px;
+}
+</style>

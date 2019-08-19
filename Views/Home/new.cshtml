@@ -1,0 +1,40 @@
+<br>
+<br>
+<h2>Add a Chef!</h2>
+<br>
+<div class="left">
+    @model Chef
+    <form asp-controller="Home" asp-action="create" method="post">
+    <span class="error" asp-validation-for="FirstName"></span><br>
+    <input class="place_input" placeholder="First Name" type="text" asp-for="FirstName"><br>
+    <span class="error" asp-validation-for="LastName"></span><br>        
+    <input class="place_input" placeholder="Last Name" type="text" asp-for="LastName"><br>
+</div>
+<div class ="right">
+    <span class="error" asp-validation-for="DateofBirth"></span><br>
+    <input class="place_input" placeholder="Date of Birth" type="date" asp-for="DateofBirth"><br>
+    <br>
+    <br>
+    <button type="submit">Add Chef</button>
+    </form>
+</div>
+
+<style>
+.place_input{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+.left{
+    width: 200px;
+    height: 300 px;
+    display: inline-block;
+    margin-left: 300px;
+}
+.right{
+    width: 200px;
+    height: 300 px;
+    display: inline-block;
+}
+</style>
